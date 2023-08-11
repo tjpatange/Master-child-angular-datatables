@@ -1,0 +1,18 @@
+<table id="parentTable" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" *ngIf="employeeData">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Phone
+    </tr>
+  </thead>
+  <tbody>
+    <tr #rowInstance *ngFor="let item of employeeData; let i= index" (click)="toggleRow(i, item.id)">
+      <td>{{item.id}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.phone}}</td>
+    </tr>
+  </tbody>  
+</table>
